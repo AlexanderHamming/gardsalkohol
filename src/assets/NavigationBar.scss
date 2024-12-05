@@ -1,0 +1,55 @@
+.Navigationbar {
+  background-color: #2c2b2b;
+  color: azure;
+  margin-top: 2.5rem;
+  border-radius: 2rem;
+  width: 100%;
+}
+
+.navbarContainer {
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: azure;
+}
+
+.navbar .nav-link:hover {
+  color: #f0a500 !important;
+}
+
+@media (min-width: 992px) {
+  .navbarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar {
+    width: 70%;
+    margin-bottom: 2rem;
+  }
+}
+
+.VendorNavbar {
+  width: 100%;
+}
+
+.VendorNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  margin-left: 4rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 6rem;
+}

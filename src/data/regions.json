@@ -1,0 +1,23 @@
+[
+    { "name": "Stockholms län", "lat": 59.6025, "lng": 18.1384 },
+    { "name": "Uppsala län", "lat": 60.0048, "lng": 17.7611 },
+    { "name": "Södermanlands län", "lat": 59.0335, "lng": 16.7514 },
+    { "name": "Östergötlands län", "lat": 58.4108, "lng": 15.6214 },
+    { "name": "Jönköpings län", "lat": 57.7530, "lng": 14.1650 },
+    { "name": "Kronobergs län", "lat": 56.8895, "lng": 14.7930 },
+    { "name": "Kalmar län", "lat": 57.0116, "lng": 16.1646 },
+    { "name": "Gotlands län", "lat": 57.5343, "lng": 18.4893 },
+    { "name": "Blekinge län", "lat": 56.2793, "lng": 15.0861 },
+    { "name": "Skåne län", "lat": 55.9903, "lng": 13.5958 },
+    { "name": "Hallands län", "lat": 56.9001, "lng": 12.8035 },
+    { "name": "Västra Götalands län", "lat": 58.2528, "lng": 13.1860 },
+    { "name": "Värmlands län", "lat": 59.7009, "lng": 13.0404 },
+    { "name": "Örebro län", "lat": 59.2741, "lng": 15.2066 },
+    { "name": "Västmanlands län", "lat": 59.6126, "lng": 16.2677 },
+    { "name": "Dalarnas län", "lat": 61.0150, "lng": 14.6660 },
+    { "name": "Gävleborgs län", "lat": 61.3035, "lng": 16.0674 },
+    { "name": "Västernorrlands län", "lat": 63.1568, "lng": 17.2871 },
+    { "name": "Jämtlands län", "lat": 63.3714, "lng": 14.7268 },
+    { "name": "Västerbottens län", "lat": 64.4949, "lng": 17.4913 },
+    { "name": "Norrbottens län", "lat": 66.8309, "lng": 20.3997 }
+  ]

@@ -1,0 +1,31 @@
+.SignupContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  padding-left: 0px;
+}
+
+.centeredContainer {
+  padding: 35px;
+  border-radius: 40px;
+  border: 5px solid #2c2b2b;
+  color: #2c2b2b;
+}
+
+.formGroupStyle {
+    margin-top: 2rem;
+}
+
+@media (min-width: 992px) {
+  .SignupContainer {
+    min-height: 100vh;
+  }
+
+  .centeredContainer {
+    width: 30rem;
+    text-align: center;
+  }
+}
