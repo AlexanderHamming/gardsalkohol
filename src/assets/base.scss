@@ -18,7 +18,7 @@ body {
 }
 
 .h1homepage {
-    font-size: 25px;
+  font-size: 25px;
 }
 .backgroundH1 {
   background-color: #fffff0;
@@ -36,6 +36,38 @@ body {
   margin-top: 1rem;
 }
 
+.regions-carousel {
+  display: flex;
+  overflow-x: auto;
+  padding: 1rem;
+  gap: 1rem;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+
+.regions-carousel::-webkit-scrollbar {
+  display: none;
+}
+.region {
+  flex: 0 0 auto;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  text-align: center;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+
+
+.region:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
 @media (min-width: 992px) {
   .pictureHomepage {
     width: 450px;
@@ -44,7 +76,7 @@ body {
   }
 
   .pictureHomepageContainer {
-    display:flex;
+    display: flex;
     justify-content: flex-end;
   }
 

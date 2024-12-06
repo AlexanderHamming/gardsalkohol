@@ -12,7 +12,6 @@ import { SubmitHandler } from "react-hook-form";
 import { ProductFormValues } from "../components/ProductForm";
 import ProductForm from "../components/ProductForm";
 
-
 const MyPage = () => {
   const { uploadImage } = useUploadImage();
   const { currentUser } = useAuth();
@@ -36,7 +35,10 @@ const MyPage = () => {
     error: vendorError,
   } = useGetDocument<VendorFormValues>("vendors", userId || "");
 
-  const productsCollectionRef = useMemo(() => getProductsCollection(userId), [userId]);
+  const productsCollectionRef = useMemo(
+    () => getProductsCollection(userId),
+    [userId]
+  );
   const {
     data: products,
     loading: productsLoading,
@@ -85,7 +87,7 @@ const MyPage = () => {
         products={products || []}
         isOwner={true}
       />
-   {products && products.length > 1 ? (
+      {products && products.length > 1 ? (
         <h2>Lägg till fler produkter!</h2>
       ) : (
         <h2>Lägg till din första produkt!</h2>

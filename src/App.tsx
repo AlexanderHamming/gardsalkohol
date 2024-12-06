@@ -8,8 +8,10 @@ import LoginPage from "./pages/LoginPage";
 import GooglemapPage from "./pages/GooglemapPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import MyPage from "./pages/MyPage";
+import RegionsVendors from "./pages/RegionsVendors";
+
 import { APIProvider } from "@vis.gl/react-google-maps";
-import RouteProtecter from "./components/routeProtecter";
+import RouteProtecter from "./components/RouteProtecter";
 
 const GooglemapsKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
@@ -24,6 +26,7 @@ function App() {
           <Route path="/inloggning" element={<LoginPage />} />
           <Route path="/googlemap" element={<GooglemapPage />} />
           <Route path="/vendor/:id" element={<VendorPage />} />
+          <Route path="/region/:regionName" element={<RegionsVendors />} />
           <Route element={<RouteProtecter />}>
             <Route path="/vendorcreation" element={<VendorCreationPage />} />
             <Route path="/mypage" element={<MyPage />} />

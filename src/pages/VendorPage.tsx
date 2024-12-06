@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import VendorDetails from "../components/VendorDetails";
 import useGetDocument from "../hooks/useGetDocument";
 import { VendorFormValues } from "../types/vendors";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import useGetCollection from "../hooks/useGetCollection";
 import { getProductsCollection } from "../services/firebase";
@@ -23,7 +23,11 @@ const VendorPage = () => {
     error: vendorError,
   } = useGetDocument<VendorFormValues>("vendors", id || "");
 
-  const productsCollectionRef = getProductsCollection(id || "");
+  const productsCollectionRef = useMemo(
+    () => getProductsCollection(id || ""),
+    [id]
+  );
+
   const {
     data: products,
     loading: productsLoading,
