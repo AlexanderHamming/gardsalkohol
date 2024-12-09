@@ -2,13 +2,16 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import logopic from "../assets/imgs/logo.png";
 
 function Navigationbar() {
   return (
     <div className='navbarContainer'>
     <Navbar expand="lg" className="bg-body-tertiary, Navigationbar">
       <Container>
-        <Navbar.Brand href="#home">Gårdsförsäljning</Navbar.Brand>
+      <Navbar.Brand href="#home">
+          <img src={logopic} alt="Logo" width={200} height={50} />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

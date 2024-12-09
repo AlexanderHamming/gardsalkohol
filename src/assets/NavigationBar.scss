@@ -1,55 +1,41 @@
 .Navigationbar {
-  background-color: #2c2b2b;
-  color: azure;
-  margin-top: 2.5rem;
-  border-radius: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  background-color: transparent;
+  z-index: 10;
+  padding: 1rem 2rem;
 }
 
-.navbarContainer {
-  width: 100%;
-  margin-bottom: 4rem;
+.navbar .navbar-brand img {
+  filter: brightness(0.2);
 }
 
 .navbar .navbar-brand,
 .navbar .nav-link {
-  color: azure;
+  color: #333 !important;
 }
 
 .navbar .nav-link:hover {
-  color: #f0a500 !important;
+  color: #0056b3 !important;
 }
 
 @media (min-width: 992px) {
-  .navbarContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .Navigationbar {
+    padding: 1rem 2rem;
   }
-  .navbar {
-    width: 70%;
-    margin-bottom: 2rem;
+
+  .VendorNav {
+    padding: 0 2rem;
   }
-}
 
-.VendorNavbar {
-  width: 100%;
-}
 
-.VendorNav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .navbar-left {
+    margin-left: 2rem;
+  }
 
-.navbar-left {
-  display: flex;
-  align-items: center;
-  margin-left: 4rem;
-}
-
-.navbar-right {
-  display: flex;
-  align-items: center;
-  margin-right: 6rem;
+  .navbar-right {
+    margin-right: 2rem;
+  }
 }

@@ -6,6 +6,7 @@ import VendorsGrid from "@/components/VendorsGrid";
 import { useGetVendorsByRegion } from "@/hooks/useGetVendorsbyRegion";
 import { useState } from "react";
 import { Container, Button } from "react-bootstrap";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 const RegionsVendors = () => {
   const navigate = useNavigate();
@@ -28,7 +29,6 @@ const RegionsVendors = () => {
   };
 
   const { lat, lng } = selectedRegion;
-  console.log(lat, lng);
 
   const {
     data: vendors,
@@ -39,6 +39,7 @@ const RegionsVendors = () => {
   console.log(vendors);
   return (
     <Container className="py-3 VendorDetailsContainer">
+      <h2 onClick={() => navigate("/")}>Startsida</h2>
       <RegionCarousel onClick={changeRegionClick} />
 
       <h1>Gårdsförsäljningar i {selectedRegion.name}</h1>
@@ -57,7 +58,7 @@ const RegionsVendors = () => {
           Kartvy
         </Button>
       </div>
-      {isLoading && <p>Loading vendors...</p>}
+      {isLoading && <LoadingSpinner />}
       {isError && <p>Failed to load vendors</p>}
       {!isLoading && !isError && (
         <>
