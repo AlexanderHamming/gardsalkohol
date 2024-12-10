@@ -25,6 +25,7 @@ function App() {
           <Route path="/inloggning" element={<LoginPage />} />
           <Route path="/vendor/:id" element={<VendorPage />} />
           <Route path="/region/:regionName" element={<RegionsVendors />} />
+          <Route path="/regionvendors" element={<RegionsVendors />} />
           <Route element={<RouteProtecter />}>
             <Route path="/vendorcreation" element={<VendorCreationPage />} />
             <Route path="/mypage" element={<MyPage />} />

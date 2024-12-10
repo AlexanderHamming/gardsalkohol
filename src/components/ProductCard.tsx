@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, ListGroup } from "react-bootstrap";
-import { Product } from "../types/vendors"; // Justera sökvägen vid behov
+import { Product } from "../types/vendors";
 
 interface ProductCardProps {
   product: Product;
@@ -18,7 +18,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       )}
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
-        <Card.Text>{product.description}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroup.Item>Pris: {product.price} kr</ListGroup.Item>

@@ -6,6 +6,8 @@ import VendorNavbar from "./VendorNavbar";
 import { VendorFormValues } from "@/types/vendors";
 import { Product } from "../types/vendors";
 import ProductCard from "./ProductCard";
+import logopic from "../assets/imgs/logo.png";
+import VendorFooter from "./VendorFooter";
 
 interface VendorDetailsProps {
   vendorData: VendorFormValues;
@@ -19,45 +21,49 @@ const VendorDetails: React.FC<VendorDetailsProps> = ({
   products,
 }) => {
   return (
-    <Container className="py-3 VendorDetailsContainer">
-      {isOwner && (
-        <>
-          <VendorNavbar
-            profileImageUrl={
-              vendorData.profileImageUrl ?? "/path/to/default/image.png"
-            }
-          />
-          <Button>Redigera</Button>
-        </>
-      )}
+    <>
+      <Container className="py-3 VendorDetailsContainer">
+        {isOwner && (
+          <>
+            <VendorNavbar
+              profileImageUrl={
+                vendorData.profileImageUrl ?? "/path/to/default/image.png"
+              }
+            />
+            <Button>Redigera</Button>
+          </>
+        )}
+        <img src={logopic} alt="Logo" width={250} height={70} />
+        <div className="VendorMainInfo">
+          <h1>{vendorData.name}</h1>
+          <p>{vendorData.description}</p>
+        </div>
 
-      <div className="VendorMainInfo">
-        <h1>{vendorData.name}</h1>
-        <p>{vendorData.open_times}</p>
-        <p>{vendorData.description}</p>
-      </div>
-      <p>{vendorData.address}</p>
-      <p>{vendorData.phone}</p>
-      <p>{vendorData.categories.join(", ")}</p>
-      <p>{vendorData.email}</p>
-      <p>{vendorData.tiktok}</p>
-      <p>{vendorData.facebook}</p>
-      <p>{vendorData.instagram}</p>
-      <p>{vendorData.website}</p>
+        {products && products.length > 0 && (
+          <>
+            <h2>Produkter</h2>
+            <Row xs={1} sm={2} md={3} className="g-4">
+              {products.map((product) => (
+                <Col key={product.id}>
+                  <ProductCard product={product} />
+                </Col>
+              ))}
+            </Row>
+          </>
+        )}
+      </Container>
 
-      {products && products.length > 0 && (
-        <>
-          <h2>Produkter</h2>
-          <Row xs={1} sm={2} md={3} className="g-4">
-            {products.map((product) => (
-              <Col key={product.id}>
-                <ProductCard product={product} />
-              </Col>
-            ))}
-          </Row>
-        </>
-      )}
-    </Container>
+      <VendorFooter
+        opentimes={vendorData.open_times}
+        Email={vendorData.email}
+        phonenumber={vendorData.phone}
+        adress={vendorData.address}
+        facebooklink={vendorData.facebook}
+        instagramlink={vendorData.instagram}
+        tiktoklink={vendorData.tiktok}
+        websitelink={vendorData.website}
+      />
+    </>
   );
 };
 
