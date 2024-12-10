@@ -5,7 +5,6 @@ import SignUpPage from "./pages/SignupPage";
 import VendorCreationPage from "./pages/VendorCreationPage";
 import VendorPage from "./pages/VendorPage";
 import LoginPage from "./pages/LoginPage";
-import GooglemapPage from "./pages/GooglemapPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import MyPage from "./pages/MyPage";
 import RegionsVendors from "./pages/RegionsVendors";
@@ -24,7 +23,6 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/registrering" element={<SignUpPage />} />
           <Route path="/inloggning" element={<LoginPage />} />
-          <Route path="/googlemap" element={<GooglemapPage />} />
           <Route path="/vendor/:id" element={<VendorPage />} />
           <Route path="/region/:regionName" element={<RegionsVendors />} />
           <Route element={<RouteProtecter />}>

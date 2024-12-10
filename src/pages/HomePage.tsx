@@ -29,7 +29,7 @@ const Homepage = () => {
         </div>
       </div>
       <Container className="py-3">
-        <h2 className="carousel-title">Välj län för att börja utforska</h2>
+        <h2 className="carousel-title">Välj ett län för att börja utforska</h2>
         <div className="row justify-content-center">
           <RegionCarousel onClick={handleRegionClick} />
         </div>

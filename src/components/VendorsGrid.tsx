@@ -19,22 +19,26 @@ const VendorsGrid: React.FC<VendorsGridProps> = ({ vendors }) => {
         {vendors.map((vendor) => (
           <Col key={vendor.id}>
             <Card
+              className="VendorCard"
               onClick={() => handleCardClick(vendor.id)}
               style={{ cursor: "pointer" }}
             >
               <Card.Img
+                className="VendorCardimg"
                 variant="top"
                 src={vendor.profileImageUrl || "/placeholder-image.jpg"}
                 alt={vendor.name}
               />
               <Card.Body>
-                <Card.Title>{vendor.name}</Card.Title>
+                <Card.Title className="Nameh1">{vendor.name}</Card.Title>
 
-            <Button>Se sortiment</Button>
+                <Card.Text>
+                  {vendor.categories.length > 1
+                    ? `Kategorier: ${vendor.categories.join(", ")}`
+                    : `Kategori: ${vendor.categories[0]}`}
+                </Card.Text>
+                <Button>Se sortiment</Button>
               </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Region: {vendor.region}</small>
-              </Card.Footer>
             </Card>
           </Col>
         ))}

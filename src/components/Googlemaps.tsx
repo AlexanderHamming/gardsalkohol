@@ -25,7 +25,7 @@ const Googlemaps: React.FC<GooglemapsPropps> = ({
   }
 
   return (
-    <div style={{ height: "60vh", width: "60vw" }}>
+    <div className="googlemapsComponent" style={{ height: "70vh",  }}>
       <Map
         defaultZoom={9}
         defaultCenter={regionCoordinates}
