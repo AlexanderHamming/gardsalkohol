@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import MyPage from "./pages/MyPage";
 import RegionsVendors from "./pages/RegionsVendors";
+import CreateVendorLoadingPage from "./pages/CreateVendorLoadingPage";
 
 import { APIProvider } from "@vis.gl/react-google-maps";
 import RouteProtecter from "./components/RouteProtecter";
@@ -28,6 +29,7 @@ function App() {
           <Route path="/regionvendors" element={<RegionsVendors />} />
           <Route element={<RouteProtecter />}>
             <Route path="/vendorcreation" element={<VendorCreationPage />} />
+            <Route path="/creatingvendor" element={<CreateVendorLoadingPage/>} />
             <Route path="/mypage" element={<MyPage />} />
           </Route>
         </Routes>

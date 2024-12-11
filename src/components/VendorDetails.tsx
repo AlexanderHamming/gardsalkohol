@@ -13,44 +13,45 @@ interface VendorDetailsProps {
   vendorData: VendorFormValues;
   isOwner: boolean;
   products: Product[];
+  children?: React.ReactNode;
 }
-
 const VendorDetails: React.FC<VendorDetailsProps> = ({
   vendorData,
   isOwner,
   products,
+  children,
 }) => {
   return (
-    <>
-      <Container className="py-3 VendorDetailsContainer">
+    <div className="VendorDetailsContainer">
+      <Container className="py-3">
         {isOwner && (
           <>
             <VendorNavbar
-              profileImageUrl={
-                vendorData.profileImageUrl ?? "/path/to/default/image.png"
-              }
+              profileImageUrl={vendorData.profileImageUrl ?? "{logopic}"}
             />
             <Button>Redigera</Button>
           </>
         )}
-        <img src={logopic} alt="Logo" width={250} height={70} />
+
+        {!isOwner && <img src={logopic} alt="Logo" width={250} height={70} />}
         <div className="VendorMainInfo">
-          <h1>{vendorData.name}</h1>
-          <p>{vendorData.description}</p>
+          <h1 className="VendorNameH1">{vendorData.name}</h1>
+          <p className="VendorDescriptiontext">{vendorData.description}</p>
         </div>
 
         {products && products.length > 0 && (
-          <>
+          <div className="ProductSection">
             <h2>Produkter</h2>
-            <Row xs={1} sm={2} md={3} className="g-4">
+            <Row xs={1} sm={2} md={3} lg={4} className="g-4">
               {products.map((product) => (
                 <Col key={product.id}>
                   <ProductCard product={product} />
                 </Col>
               ))}
             </Row>
-          </>
+          </div>
         )}
+        {children}
       </Container>
 
       <VendorFooter
@@ -63,7 +64,7 @@ const VendorDetails: React.FC<VendorDetailsProps> = ({
         tiktoklink={vendorData.tiktok}
         websitelink={vendorData.website}
       />
-    </>
+    </div>
   );
 };
 

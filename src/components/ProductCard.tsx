@@ -8,12 +8,13 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <Card style={{ width: "15rem" }} className="mb-4">
+    <Card style={{ width: "12rem" }} className="mb-4 ProductCard">
       {product.productImgUrl && (
         <Card.Img
           variant="top"
           src={product.productImgUrl}
           alt={product.name}
+          className="ProductCardimg"
         />
       )}
       <Card.Body>

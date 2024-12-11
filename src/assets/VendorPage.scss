@@ -1,20 +1,29 @@
 .VendorDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .VendorMainInfo {
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   text-align: center;
-  line-height: 1.5rem;
+}
+.VendorNameH1 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
+.VendorDescriptiontext {
+  line-height: 1.6rem;
+}
 .VendorFooter {
   background-color: #023020;
   color: white;
-}
-
-.VendorFooter {
   text-align: center;
+  margin-top: 5rem;
+  margin-top: auto;
+  padding: 2rem 0;
 }
 
 .VendorFooter h5 {
@@ -29,6 +38,49 @@
 }
 
 .sociala-media-links img {
-    width: 2.5rem;
+  width: 2.5rem;
+}
+
+.ProductCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ProductCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
   }
 
+
+.ProductCardimg {
+  height: 250px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.ProductSection {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 992px) {
+  .VendorMainInfo {
+    padding-left: 9rem;
+    padding-right: 9rem;
+    line-height: 1.6rem;
+    margin-bottom: 5rem;
+  }
+
+  .VendorNameH1 {
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ProductSection {
+    margin-bottom: 5rem;
+  }
+}

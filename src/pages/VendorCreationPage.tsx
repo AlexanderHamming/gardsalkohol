@@ -39,8 +39,8 @@ const VendorCreationPage = () => {
       };
 
       await setDoc(doc(vendorsCollection, userId), vendorWithId);
-      console.log("vendor created");
-      navigate("/mypage");
+
+      navigate("/creatingvendor");
     } catch (error) {
       console.error("error creating vendor:", error);
     }

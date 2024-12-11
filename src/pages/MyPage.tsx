@@ -86,14 +86,14 @@ const MyPage = () => {
         vendorData={vendorData}
         products={products || []}
         isOwner={true}
-      />
-      {products && products.length > 1 ? (
-        <h2>Lägg till fler produkter!</h2>
-      ) : (
-        <h2>Lägg till din första produkt!</h2>
-      )}
-
-      <ProductForm onSubmit={handleAddProduct} />
+      >
+        {products && products.length > 1 ? (
+          <h2>Lägg till fler produkter!</h2>
+        ) : (
+          <h2>Lägg till din första produkt!</h2>
+        )}
+        <ProductForm onSubmit={handleAddProduct} />
+      </VendorDetails>
     </>
   );
 };
