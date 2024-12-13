@@ -7,6 +7,12 @@ export interface Product {
   productImgUrl: string;
 }
 
+export interface ProductRating {
+  productId: string;
+  rating: number;
+  review: string;
+}
+
 export interface Geopoint {
   lat: number;
   lng: number;

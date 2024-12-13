@@ -4,10 +4,11 @@ import {
   DocumentData,
   collection,
   getFirestore,
+
 } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
-import { Vendor, Product  } from "../types/vendors";
+import { Vendor, Product } from "../types/vendors";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -33,5 +34,10 @@ const createCollection = <T = DocumentData>(collectionName: string) => {
 export const vendorsCollection = createCollection<Vendor>("vendors");
 
 export const getProductsCollection = (vendorId: string) => {
-  return collection(db, "vendors", vendorId, "products") as CollectionReference<Product>;
+  return collection(
+    db,
+    "vendors",
+    vendorId,
+    "products"
+  ) as CollectionReference<Product>;
 };

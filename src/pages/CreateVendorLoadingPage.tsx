@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import Container from "react-bootstrap/Container";
+import TablePic from "../assets/imgs/oya.png"
 
 const CreateVendorLoadingPage = () => {
     const navigate = useNavigate();
@@ -22,6 +23,10 @@ const CreateVendorLoadingPage = () => {
 
       <div>
         <LoadingSpinner />
+      </div>
+
+      <div>
+        <img src={TablePic} alt="Table with spirits" className="TablePic" />
       </div>
     </Container>
   );

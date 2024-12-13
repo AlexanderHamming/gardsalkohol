@@ -109,6 +109,13 @@ h1, h2, h3 {
   margin-right: 0.4rem;
 }
 
+.spinnerContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 992px) {
   .hero {
     height: 550px;

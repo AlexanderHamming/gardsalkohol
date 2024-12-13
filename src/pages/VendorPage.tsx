@@ -34,6 +34,8 @@ const VendorPage = () => {
     error: productsError,
   } = useGetCollection<Product>(productsCollectionRef);
 
+
+
   if (vendorLoading) {
     return <LoadingSpinner />;
   }
