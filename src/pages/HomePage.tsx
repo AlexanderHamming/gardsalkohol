@@ -1,7 +1,7 @@
 import { useState } from "react";
 import RegionCarousel from "../components/RegionCarousel";
 import { useNavigate } from "react-router-dom";
-import Container from "react-bootstrap/Container";
+import { Container } from "react-bootstrap";
 
 const Homepage = () => {
   const navigate = useNavigate();
