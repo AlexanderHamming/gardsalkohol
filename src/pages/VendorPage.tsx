@@ -7,7 +7,6 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import useGetCollection from "../hooks/useGetCollection";
 import { getProductsCollection } from "../services/firebase";
 import { Product } from "../types/vendors";
-import logopic from "../assets/imgs/logo.png";
 import gf from "../assets/imgs/gf.png"
 
 const VendorPage = () => {
