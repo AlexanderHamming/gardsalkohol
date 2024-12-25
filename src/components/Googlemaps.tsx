@@ -4,10 +4,12 @@ import {
   AdvancedMarker,
   Pin,
   InfoWindow,
+  APIProvider
 } from "@vis.gl/react-google-maps";
 import { Vendor } from "@/types/vendors";
 
 const GooglemapsID = import.meta.env.VITE_GOOGLE_MAP_ID;
+const GooglemapsAPIKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 interface GooglemapsPropps {
   regionCoordinates: { lat: number; lng: number };
@@ -25,6 +27,7 @@ const Googlemaps: React.FC<GooglemapsPropps> = ({
   }
 
   return (
+    <APIProvider apiKey={GooglemapsAPIKey}>
     <div className="googlemapsComponent" style={{ height: "70vh",  }}>
       <Map
         defaultZoom={7.5}
@@ -53,6 +56,7 @@ const Googlemaps: React.FC<GooglemapsPropps> = ({
         ))}
       </Map>
     </div>
+    </APIProvider>
   );
 };
 
