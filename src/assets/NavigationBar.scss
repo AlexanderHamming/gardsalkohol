@@ -8,10 +8,6 @@
   padding: 1rem 2rem;
 }
 
-.navbar .navbar-brand img {
-  filter: brightness(0.2);
-}
-
 .navbar .navbar-brand,
 .navbar .nav-link {
   color: #333 !important;
@@ -19,6 +15,14 @@
 
 .navbar .nav-link:hover {
   color: #0056b3 !important;
+}
+
+.VendorNavbar {
+  display: flex;
+}
+
+.navbar-left {
+  display: none;
 }
 
 @media (min-width: 992px) {
@@ -30,12 +34,7 @@
     padding: 0 2rem;
   }
 
-
   .navbar-left {
-    margin-left: 2rem;
-  }
-
-  .navbar-right {
-    margin-right: 2rem;
+    display: block;
   }
 }

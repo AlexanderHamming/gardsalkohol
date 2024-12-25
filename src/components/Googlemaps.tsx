@@ -27,7 +27,7 @@ const Googlemaps: React.FC<GooglemapsPropps> = ({
   return (
     <div className="googlemapsComponent" style={{ height: "70vh",  }}>
       <Map
-        defaultZoom={9}
+        defaultZoom={7.5}
         defaultCenter={regionCoordinates}
         mapId={GooglemapsID}
       >
@@ -37,7 +37,7 @@ const Googlemaps: React.FC<GooglemapsPropps> = ({
             position={vendor.adressLocation}
             onClick={() => setOpen(vendor.id)}
           >
-            <Pin background={"blue"} />
+            <Pin background={"red"} />
             {open === vendor.id && (
               <InfoWindow
                 position={vendor.adressLocation}

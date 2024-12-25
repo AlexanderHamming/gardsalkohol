@@ -21,8 +21,8 @@ const ProductForm: React.FC<ProductFormProps> = ({ onSubmit }) => {
   } = useForm<ProductFormValues>();
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
-      <Form.Group controlId="productName">
+    <Form onSubmit={handleSubmit(onSubmit)} className="product-form">
+      <Form.Group controlId="productName" className="mb-2">
         <Form.Label>Produktnamn</Form.Label>
         <Form.Control
           type="text"
@@ -35,7 +35,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ onSubmit }) => {
         </Form.Control.Feedback>
       </Form.Group>
 
-      <Form.Group controlId="productPrice">
+      <Form.Group controlId="productPrice" className="mb-2">
         <Form.Label>Pris</Form.Label>
         <Form.Control
           type="number"
@@ -51,7 +51,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ onSubmit }) => {
         </Form.Control.Feedback>
       </Form.Group>
 
-      <Form.Group controlId="productDescription">
+      <Form.Group controlId="productDescription" className="mb-2">
         <Form.Label>Beskrivning</Form.Label>
         <Form.Control
           as="textarea"
@@ -82,8 +82,9 @@ const ProductForm: React.FC<ProductFormProps> = ({ onSubmit }) => {
           </Form.Control.Feedback>
         )}
       </Form.Group>
-
-      <Button type="submit">Lägg till produkt</Button>
+      <div className="button-product-form">
+        <Button type="submit">Lägg till produkt</Button>
+      </div>
     </Form>
   );
 };

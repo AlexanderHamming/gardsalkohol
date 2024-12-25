@@ -7,6 +7,8 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import useGetCollection from "../hooks/useGetCollection";
 import { getProductsCollection } from "../services/firebase";
 import { Product } from "../types/vendors";
+import logopic from "../assets/imgs/logo.png";
+import gf from "../assets/imgs/gf.png"
 
 const VendorPage = () => {
   useEffect(() => {
@@ -34,8 +36,6 @@ const VendorPage = () => {
     error: productsError,
   } = useGetCollection<Product>(productsCollectionRef);
 
-
-
   if (vendorLoading) {
     return <LoadingSpinner />;
   }
@@ -52,11 +52,8 @@ const VendorPage = () => {
 
   return (
     <div>
-      <VendorDetails
-        vendorData={vendorData}
-        products={products || []}
-        isOwner={false}
-      />
+      <img src={gf} alt="Logo" width={120} height={120} className="vendorpage-logo" />
+      <VendorDetails vendorData={vendorData} products={products || []} />
     </div>
   );
 };

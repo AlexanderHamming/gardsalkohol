@@ -13,6 +13,7 @@ const useGetDocument = <T>(collectionName: string, documentId: string | null) =>
       setLoading(true);
       setError(null);
 
+
       try {
         const docRef = doc(db, collectionName, documentId);
         const docSnap = await getDoc(docRef);

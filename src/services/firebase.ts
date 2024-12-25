@@ -4,7 +4,8 @@ import {
   DocumentData,
   collection,
   getFirestore,
-
+  doc,
+  updateDoc,
 } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
@@ -41,3 +42,12 @@ export const getProductsCollection = (vendorId: string) => {
     "products"
   ) as CollectionReference<Product>;
 };
+
+export async function updateDocument(
+  collectionName: string,
+  docId: string,
+  data: any
+): Promise<void> {
+  const docRef = doc(db, collectionName, docId);
+  await updateDoc(docRef, data);
+}

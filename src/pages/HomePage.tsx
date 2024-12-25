@@ -1,5 +1,4 @@
 import { useState } from "react";
-import NavigationBar from "../components/NavigationBar";
 import RegionCarousel from "../components/RegionCarousel";
 import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
@@ -15,8 +14,6 @@ const Homepage = () => {
 
   return (
     <>
-      <NavigationBar />
-
       <div className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-content">

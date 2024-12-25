@@ -1,5 +1,4 @@
 import VendorDetails from "@/components/VendorDetails";
-import useGetDocument from "@/hooks/useGetDocument";
 import useAuth from "../hooks/useAuth";
 import { VendorFormValues, Product } from "../types/vendors";
 import { useEffect, useMemo } from "react";
@@ -11,8 +10,15 @@ import useGetCollection from "@/hooks/useGetCollection";
 import { SubmitHandler } from "react-hook-form";
 import { ProductFormValues } from "../components/ProductForm";
 import ProductForm from "../components/ProductForm";
+import VendorNavbar from "../components/MyPageNavbar";
+import { useState } from "react";
+import EditVendorModal from "../components/EditVendorModal";
+import { updateDocument } from "@/services/firebase";
+import useStreamDocument from "@/hooks/useStreamDocument";
 
 const MyPage = () => {
+  const [showEditModal, setShowEditModal] = useState(false);
+
   const { uploadImage } = useUploadImage();
   const { currentUser } = useAuth();
 
@@ -33,7 +39,7 @@ const MyPage = () => {
     data: vendorData,
     loading: vendorLoading,
     error: vendorError,
-  } = useGetDocument<VendorFormValues>("vendors", userId || "");
+  } = useStreamDocument<VendorFormValues>("vendors", userId || "");
 
   const productsCollectionRef = useMemo(
     () => getProductsCollection(userId),
@@ -66,6 +72,24 @@ const MyPage = () => {
     }
   };
 
+  const handleUpdateVendor = async (updatedData: VendorFormValues) => {
+    try {
+      const { profileImageFile, ...rest } = updatedData;
+
+      let updatedVendorData = { ...rest }; // Utgångsläget
+
+      if (profileImageFile && profileImageFile.length > 0) {
+        const file = profileImageFile[0];
+        const downloadUrl = await uploadImage(`path/${file.name}`, file);
+        updatedVendorData = { ...rest, profileImageUrl: downloadUrl };
+      }
+
+      await updateDocument("vendors", userId, updatedVendorData);
+    } catch (error) {
+      console.error("Fel vid uppdatering:", error);
+    }
+  };
+
   if (vendorLoading) {
     return <LoadingSpinner />;
   }
@@ -82,18 +106,24 @@ const MyPage = () => {
 
   return (
     <>
-      <VendorDetails
-        vendorData={vendorData}
-        products={products || []}
-        isOwner={true}
-      >
+      <VendorNavbar
+        profileImageUrl={vendorData.profileImageUrl ?? ""}
+        setShowEditModal={setShowEditModal}
+      />
+      <VendorDetails vendorData={vendorData} products={products || []}>
         {products && products.length > 1 ? (
-          <h2>Lägg till fler produkter!</h2>
+          <h2 className="h2-addProduct">Lägg till fler produkter!</h2>
         ) : (
-          <h2>Lägg till din första produkt!</h2>
+          <h2 className="h2-addProduct">Lägg till din första produkt!</h2>
         )}
         <ProductForm onSubmit={handleAddProduct} />
       </VendorDetails>
+      <EditVendorModal
+        show={showEditModal}
+        onHide={() => setShowEditModal(false)}
+        vendorData={vendorData}
+        onSubmit={handleUpdateVendor}
+      />
     </>
   );
 };

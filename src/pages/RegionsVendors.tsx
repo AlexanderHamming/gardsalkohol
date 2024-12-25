@@ -40,9 +40,10 @@ const RegionsVendors = () => {
       />
 
       <h1 className="h1regionvendors">
-        Gårdsförsäljningar i {selectedRegion.name}
+        {vendors && vendors.length > 0
+          ? `Gårdsförsäljningar i ${selectedRegion.name}`
+          : `Inga registrerade gårdsförsäljningar i ${selectedRegion.name}`}
       </h1>
-
       <Tab.Container defaultActiveKey="grid">
         <Nav variant="tabs" className="justify-content-center">
           <Nav.Item>
