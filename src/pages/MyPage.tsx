@@ -119,7 +119,8 @@ const MyPage = () => {
         ) : (
           <h2 className="h2-addProduct">Lägg till din första produkt!</h2>
         )}
-        <ProductForm onSubmit={handleAddProduct} />
+        <ProductForm onSubmit={handleAddProduct}
+        key={products?.length}  />
       </VendorDetails>
       <EditVendorModal
         show={showEditModal}

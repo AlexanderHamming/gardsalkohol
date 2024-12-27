@@ -1,4 +1,3 @@
-// ProductForm.tsx
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
 
