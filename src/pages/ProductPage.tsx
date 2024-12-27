@@ -30,9 +30,6 @@ const ProductPage = () => {
   if (productLoading) return <LoadingSpinner />;
   if (productError || !product) return <p>Det gick inte att hämta produkten</p>;
 
-  console.log("hej");
-
-
   const handleSubmit = async (rating: number, review: string) => {
     if (!vendorId || !productId) return;
 
@@ -66,12 +63,12 @@ const ProductPage = () => {
           <p>{product.description}</p>
           <p>{product.price} Kr</p>
           {ratingLoading ? (
-          <p>Loading...</p>
-        ) : ratingError ? (
-          <p>Inga betyg tillgängliga</p>
-        ) : (
-          <AverageProductRating rating={averageRating || 0} />
-        )}
+            <p>Loading...</p>
+          ) : ratingError ? (
+            <p>Inga betyg tillgängliga</p>
+          ) : (
+            <AverageProductRating rating={averageRating || 0} />
+          )}
         </div>
 
         <div className="reviewField">

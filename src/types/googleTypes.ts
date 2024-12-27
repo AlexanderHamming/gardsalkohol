@@ -1,5 +1,5 @@
 export interface GeocodeResult {
-    lat: number;
-    lng: number;
-    region: string;
-  }
+  lat: number;
+  lng: number;
+  region: string;
+}

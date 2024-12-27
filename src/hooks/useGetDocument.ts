@@ -2,7 +2,10 @@ import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "@/services/firebase";
 
-const useGetDocument = <T>(collectionName: string, documentId: string | null) => {
+const useGetDocument = <T>(
+  collectionName: string,
+  documentId: string | null
+) => {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -12,7 +15,6 @@ const useGetDocument = <T>(collectionName: string, documentId: string | null) =>
       if (!documentId) return;
       setLoading(true);
       setError(null);
-
 
       try {
         const docRef = doc(db, collectionName, documentId);

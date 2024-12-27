@@ -7,7 +7,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import useGetCollection from "../hooks/useGetCollection";
 import { getProductsCollection } from "../services/firebase";
 import { Product } from "../types/vendors";
-import gf from "../assets/imgs/gf.png"
+import gf from "../assets/imgs/gf.png";
 
 const VendorPage = () => {
   useEffect(() => {
@@ -51,7 +51,13 @@ const VendorPage = () => {
 
   return (
     <div>
-      <img src={gf} alt="Logo" width={120} height={120} className="vendorpage-logo" />
+      <img
+        src={gf}
+        alt="Logo"
+        width={120}
+        height={120}
+        className="vendorpage-logo"
+      />
       <VendorDetails vendorData={vendorData} products={products || []} />
     </div>
   );

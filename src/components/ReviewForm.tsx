@@ -25,7 +25,7 @@ const ReviewForm = ({
     <form onSubmit={handleFormSubmit}>
       <StarsRating rating={rating} onRatingSelect={setRating} />
       <textarea
-      className="TextArea"
+        className="TextArea"
         value={review}
         onChange={(e) => setReview(e.target.value)}
         placeholder="Skriv din recension här..."

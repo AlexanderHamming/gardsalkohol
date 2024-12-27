@@ -15,7 +15,11 @@ const RegionsCarousel: React.FC<RegionsCarouselProps> = ({ onClick }) => {
         >
           <div className="region-container">
             <div>
-              <img className="region-image" src={region.image} alt={region.name} />
+              <img
+                className="region-image"
+                src={region.image}
+                alt={region.name}
+              />
             </div>
             <div className="region-name">
               <h2>{region.name}</h2>

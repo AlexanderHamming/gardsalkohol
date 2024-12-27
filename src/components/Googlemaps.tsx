@@ -4,7 +4,7 @@ import {
   AdvancedMarker,
   Pin,
   InfoWindow,
-  APIProvider
+  APIProvider,
 } from "@vis.gl/react-google-maps";
 import { Vendor } from "@/types/vendors";
 
@@ -28,34 +28,34 @@ const Googlemaps: React.FC<GooglemapsPropps> = ({
 
   return (
     <APIProvider apiKey={GooglemapsAPIKey}>
-    <div className="googlemapsComponent" style={{ height: "70vh",  }}>
-      <Map
-        defaultZoom={7.5}
-        defaultCenter={regionCoordinates}
-        mapId={GooglemapsID}
-      >
-        {vendors.map((vendor) => (
-          <AdvancedMarker
-            key={vendor.id}
-            position={vendor.adressLocation}
-            onClick={() => setOpen(vendor.id)}
-          >
-            <Pin background={"red"} />
-            {open === vendor.id && (
-              <InfoWindow
-                position={vendor.adressLocation}
-                onCloseClick={() => setOpen(null)}
-              >
-                <div>
-                  <h3>{vendor.name}</h3>
-                  <p>{vendor.description}</p>
-                </div>
-              </InfoWindow>
-            )}
-          </AdvancedMarker>
-        ))}
-      </Map>
-    </div>
+      <div className="googlemapsComponent" style={{ height: "70vh" }}>
+        <Map
+          defaultZoom={7.5}
+          defaultCenter={regionCoordinates}
+          mapId={GooglemapsID}
+        >
+          {vendors.map((vendor) => (
+            <AdvancedMarker
+              key={vendor.id}
+              position={vendor.adressLocation}
+              onClick={() => setOpen(vendor.id)}
+            >
+              <Pin background={"red"} />
+              {open === vendor.id && (
+                <InfoWindow
+                  position={vendor.adressLocation}
+                  onCloseClick={() => setOpen(null)}
+                >
+                  <div>
+                    <h3>{vendor.name}</h3>
+                    <p>{vendor.description}</p>
+                  </div>
+                </InfoWindow>
+              )}
+            </AdvancedMarker>
+          ))}
+        </Map>
+      </div>
     </APIProvider>
   );
 };

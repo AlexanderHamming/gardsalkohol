@@ -29,7 +29,7 @@ const useGetCollection = <T>(
           id: doc.id,
         }));
         setData(docs);
-        console.log("getting a collection");
+
         setLoading(false);
       },
       (err) => {

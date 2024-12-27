@@ -14,8 +14,9 @@ const useGeocode = () => {
       geocodingService.geocode({ address }, (results, status) => {
         if (status === "OK" && results && results.length > 0) {
           const location = results[0].geometry.location;
-          const regionComponent = results[0].address_components.find((component) =>
-            component.types.includes("administrative_area_level_1")
+          const regionComponent = results[0].address_components.find(
+            (component) =>
+              component.types.includes("administrative_area_level_1")
           );
           resolve({
             lat: location.lat(),

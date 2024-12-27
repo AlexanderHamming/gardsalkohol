@@ -15,6 +15,7 @@ import { useState } from "react";
 import EditVendorModal from "../components/EditVendorModal";
 import { updateDocument } from "@/services/firebase";
 import useStreamDocument from "@/hooks/useStreamDocument";
+import { toast } from "react-toastify";
 
 const MyPage = () => {
   const [showEditModal, setShowEditModal] = useState(false);
@@ -76,7 +77,7 @@ const MyPage = () => {
     try {
       const { profileImageFile, ...rest } = updatedData;
 
-      let updatedVendorData = { ...rest }; // Utgångsläget
+      let updatedVendorData = { ...rest };
 
       if (profileImageFile && profileImageFile.length > 0) {
         const file = profileImageFile[0];
@@ -85,8 +86,10 @@ const MyPage = () => {
       }
 
       await updateDocument("vendors", userId, updatedVendorData);
+      toast.success("Profilen har uppdaterats!");
     } catch (error) {
       console.error("Fel vid uppdatering:", error);
+      toast.error("Något gick fel vid uppdatering.");
     }
   };
 

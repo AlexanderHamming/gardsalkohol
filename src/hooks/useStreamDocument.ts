@@ -6,7 +6,7 @@ function useStreamDocument<T>(collectionName: string, documentId: string) {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-console.log("streamar")
+
   useEffect(() => {
     if (!documentId) {
       setLoading(false);

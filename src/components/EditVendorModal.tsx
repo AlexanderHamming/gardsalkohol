@@ -15,10 +15,9 @@ const EditVendorModal: React.FC<EditVendorModalProps> = ({
   vendorData,
   onSubmit,
 }) => {
-
   const handleFormSubmit = (updatedData: VendorFormValues) => {
     onSubmit(updatedData);
-    onHide()
+    onHide();
   };
 
   return (

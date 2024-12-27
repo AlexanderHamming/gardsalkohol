@@ -35,7 +35,10 @@ const AuthForm: React.FC<AuthFormProps> = ({
         <h1>{title}</h1>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit(onSubmit)}>
-          <Form.Group className="mb-3 formGroupStyle" controlId="formGroupEmail">
+          <Form.Group
+            className="mb-3 formGroupStyle"
+            controlId="formGroupEmail"
+          >
             <Form.Label>E-postadress</Form.Label>
             <Form.Control
               type="email"
@@ -54,7 +57,10 @@ const AuthForm: React.FC<AuthFormProps> = ({
             </Form.Control.Feedback>
           </Form.Group>
 
-          <Form.Group className="mb-3 formGroupStyle" controlId="formGroupPassword">
+          <Form.Group
+            className="mb-3 formGroupStyle"
+            controlId="formGroupPassword"
+          >
             <Form.Label>Lösenord</Form.Label>
             <Form.Control
               type="password"

@@ -12,7 +12,7 @@ const Homepage = () => {
     navigate(`/region/${regionName}`);
   };
 
-  console.log(selectedRegion)
+  console.log(selectedRegion);
   return (
     <>
       <div className="hero">
